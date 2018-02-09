@@ -35,20 +35,7 @@
     self.Display.text = @"";
 }
 - (IBAction)OperatorPressed:(id)sender {
-    double ret=0;
-    if([[sender currentTitle] isEqualToString:@"+"])
-    {
-        ret = [self.calculator calculate:@"+"];
-    }else if([[sender currentTitle] isEqualToString:@"-"])
-    {
-        ret = [self.calculator calculate:@"-"];
-    }else if([[sender currentTitle] isEqualToString:@"*"])
-    {
-        ret = [self.calculator calculate:@"*"];
-    }else if([[sender currentTitle] isEqualToString:@"/"])
-    {
-        ret = [self.calculator calculate:@"/"];
-    }
+    double ret = [self.calculator calculate:[sender currentTitle]];
     
     self.Display.text = [NSString stringWithFormat:@"%.2f",ret];
 }
